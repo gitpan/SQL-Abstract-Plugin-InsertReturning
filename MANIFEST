@@ -8,6 +8,5 @@ dist.ini
 lib/SQL/Abstract/Plugin/InsertReturning.pm
 t/00_compile.t
 t/01_basic.t
-t/ChangeLog
 t/release-pod-coverage.t
 t/release-pod-syntax.t
