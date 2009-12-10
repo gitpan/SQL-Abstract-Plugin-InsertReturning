@@ -1,7 +1,7 @@
 
 
 This archive contains the distribution SQL-Abstract-Plugin-InsertReturning, version
-0.02:
+0.03:
 
   Augment SQL::Abstract->insert with support for returning data
 
