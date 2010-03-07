@@ -4,21 +4,36 @@ use warnings;
 
 
 
-use ExtUtils::MakeMaker;
+use ExtUtils::MakeMaker 6.11;
 
-WriteMakefile(
-  DISTNAME  => 'SQL-Abstract-Plugin-InsertReturning',
-  NAME      => 'SQL::Abstract::Plugin::InsertReturning',
-  AUTHOR    => "Oliver\ Charles\ \<oliver\.g\.charles\@googlemail\.com\>",
-  ABSTRACT  => "Augment\ SQL\:\:Abstract\-\>insert\ with\ support\ for\ returning\ data",
-  VERSION   => '0.03',
-  EXE_FILES => [ qw() ],
-  (eval { ExtUtils::MakeMaker->VERSION(6.31) } ? (LICENSE => '') : ()),
-  PREREQ_PM    => {
-    "Test::More" => '0.88',
-    "SQL::Abstract" => '0',
-    "Sub::Exporter" => '0',
-  },
-  test => {TESTS => 't/*.t'}
-);
+
+
+my %WriteMakefileArgs = (
+                       'test' => {
+                                   'TESTS' => 't/*.t'
+                                 },
+                       'NAME' => 'SQL::Abstract::Plugin::InsertReturning',
+                       'DISTNAME' => 'SQL-Abstract-Plugin-InsertReturning',
+                       'CONFIGURE_REQUIRES' => {
+                                                 'ExtUtils::MakeMaker' => '6.11'
+                                               },
+                       'AUTHOR' => 'Oliver Charles <oliver.g.charles@googlemail.com>',
+                       'BUILD_REQUIRES' => {},
+                       'ABSTRACT' => 'Augment SQL::Abstract->insert with support for returning data',
+                       'EXE_FILES' => [],
+                       'VERSION' => '0.04',
+                       'PREREQ_PM' => {
+                                        'SQL::Abstract' => '1.61',
+                                        'Test::More' => '0.88'
+                                      },
+                       'LICENSE' => undef
+                     );
+
+
+delete $WriteMakefileArgs{LICENSE}
+  unless eval { ExtUtils::MakeMaker->VERSION(6.31) };
+
+WriteMakefile(%WriteMakefileArgs);
+
+
 
