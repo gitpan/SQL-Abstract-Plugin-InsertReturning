@@ -1,5 +1,5 @@
 package SQL::Abstract::Plugin::InsertReturning;
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 # ABSTRACT: Augment SQL::Abstract->insert with support for returning data
 
 use strict;

@@ -21,10 +21,11 @@ my %WriteMakefileArgs = (
                        'BUILD_REQUIRES' => {},
                        'ABSTRACT' => 'Augment SQL::Abstract->insert with support for returning data',
                        'EXE_FILES' => [],
-                       'VERSION' => '0.04',
+                       'VERSION' => '0.05',
                        'PREREQ_PM' => {
                                         'SQL::Abstract' => '1.61',
-                                        'Test::More' => '0.88'
+                                        'Test::More' => '0.88',
+                                        'Sub::Exporter' => '0.9'
                                       },
                        'LICENSE' => undef
                      );
